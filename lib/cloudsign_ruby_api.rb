@@ -1,6 +1,5 @@
 require "cloudsign_ruby_api/version"
+require "cloudsign_ruby_api/cloudsign_api"
 
-module CloudsignRubyApi
-  class Error < StandardError; end
-  # Your code goes here...
+class InvalidClientIdError < StandardError
 end
