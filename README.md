@@ -1,10 +1,14 @@
 # CloudsignRubyApi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cloudsign_ruby_api`. To experiment with that code, run `bin/console` for an interactive prompt.
+CloudsignRubyApiは、電子契約サービス「クラウドサイン」のAPIをRubyで扱いやすくしたAPIラッパーです。
 
-TODO: Delete this and the text above, and describe your gem
+# 問い合わせ
 
-## Installation
+naoyanickf@gmail.com
+
+https://twitter.com/fuji_syan
+
+## 導入
 
 Add this line to your application's Gemfile:
 
@@ -20,9 +24,27 @@ Or install it yourself as:
 
     $ gem install cloudsign_ruby_api
 
-## Usage
+## 前提
 
-TODO: Write usage instructions here
+基本的な考え方はクラウドサイン Web API 利用ガイドを参照してください。
+
+https://help.cloudsign.jp/articles/2681259-web-api
+
+その上で、
+・クライアントIDの発行
+・テンプレートの登録
+
+をクラウドサインの管理画面から行っておいてください。
+
+## 使い方
+
+```
+# 初期化
+client = CloudsignApi.new('<YOUR CLIENT ID>')
+
+# 動作確認
+p client.documents
+```
 
 ## Development
 
