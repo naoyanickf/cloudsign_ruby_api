@@ -31,7 +31,9 @@ Or install it yourself as:
 https://help.cloudsign.jp/articles/2681259-web-api
 
 その上で、
+
 ・クライアントIDの発行
+
 ・テンプレートの登録
 
 をクラウドサインの管理画面から行っておいてください。
