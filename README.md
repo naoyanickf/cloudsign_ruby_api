@@ -2,12 +2,6 @@
 
 CloudsignRubyApiは、電子契約サービス「クラウドサイン」のAPIをRubyで扱いやすくしたAPIラッパーです。
 
-# 問い合わせ
-
-naoyanickf@gmail.com
-
-https://twitter.com/fuji_syan
-
 ## 導入
 
 Add this line to your application's Gemfile:
@@ -31,7 +25,9 @@ Or install it yourself as:
 https://help.cloudsign.jp/articles/2681259-web-api
 
 その上で、
+
 ・クライアントIDの発行
+
 ・テンプレートの登録
 
 をクラウドサインの管理画面から行っておいてください。
