@@ -34,7 +34,7 @@ class CloudsignApi
   end
 
   def make_contract(template_id, name, email, data = [])
-    document = create_documents(template_id)
+    document = create_document(template_id)
     update_receiver_participant(document, name, email)
 
     sender_widgets = document['files'][0]['widgets'].select { |widget| widget['widget_type'] == 1 }
@@ -45,7 +45,7 @@ class CloudsignApi
     send_document(document)
   end
 
-  def documents
+  def fetch_documents
     fetch_access_token
     url = build_url('/documents')
     params = {}
@@ -53,7 +53,17 @@ class CloudsignApi
     JSON.parse(response.body)
   end
 
-  def create_documents(template_id)
+  def fetch_document(document_id)
+    # documentのstatusについて
+    # 0 - 下書き, 1 - 先方確認中, 2 - 締結済, 3 - 取消、または却下, 4 - テンプレート
+    fetch_access_token
+    url = build_url("/documents/#{document_id}")
+    params = {}
+    response = @client.get(url, query: params, header: build_header)
+    JSON.parse(response.body)
+  end
+
+  def create_document(template_id)
     fetch_access_token
     url = build_url('/documents')
     params = {template_id: template_id}
